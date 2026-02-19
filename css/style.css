@@ -1,4 +1,9 @@
 /* Background Theme */
+html, body {
+  height: 100%;
+  background: #0b1220 !important;
+  margin: 0;
+}
 body {
   background: #0b1220;
   color: white;
