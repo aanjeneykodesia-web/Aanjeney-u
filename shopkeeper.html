@@ -13,9 +13,16 @@
 <input id="mobile" placeholder="Mobile">
 <button onclick="registerUser('shopkeepers')">Register</button>
 
-<h3>Place Order</h3>
-<input id="product" placeholder="Product">
-<input id="price" placeholder="Price">
-<button onclick="placeOrder()">Send Order</button>
+<h3>Add Products</h3>
+
+<input type="text" id="productName" placeholder="Product Name">
+<input type="number" id="productQty" placeholder="Quantity">
+
+<button onclick="addToCart()">+</button>
+
+<h3>Cart Items</h3>
+<ul id="cartList"></ul>
+
+<button onclick="sendOrder()">Send Order</button>
 </body>
 </html>
