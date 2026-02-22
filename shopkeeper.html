@@ -85,5 +85,20 @@
   font-size: 16px;
 }
   </style>
+  <script>
+function openPaymentPopup() {
+  document.getElementById("orderPopup").style.display = "block";
+}
+
+function closePopup() {
+  document.getElementById("orderPopup").style.display = "none";
+}
+
+function sendConfirmedOrder() {
+  alert("✅ Order Sent Successfully!");
+  closePopup();
+}
+  </script>
+  
 </body>
 </html>
