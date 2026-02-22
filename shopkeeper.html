@@ -99,6 +99,19 @@ function sendConfirmedOrder() {
   closePopup();
 }
   </script>
-  
+  <div id="orderPopup" class="popupBox">
+  <div class="popupContent">
+
+    <h2>💰 Payment Confirmation</h2>
+    <p>Total Price: ₹<span id="popupTotalPrice"></span></p>
+
+    <h3>Upload Payment Screenshot</h3>
+    <input type="file" id="paymentProof"><br><br>
+
+    <button onclick="sendConfirmedOrder()">Send Order</button>
+    <button onclick="closePopup()">Close</button>
+
+  </div>
+  </div>
 </body>
 </html>
