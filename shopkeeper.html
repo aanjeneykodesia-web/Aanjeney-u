@@ -1,54 +1,35 @@
-<!DOCTYPE html>
-<html>
+ <!DOCTYPE html><html>
 <head>
 <title>Shopkeeper Dashboard</title>
 <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="css/dashboard.css">
+<link rel="stylesheet" href="css/dashboard.css">
 <script type="module" src="../js/login.js"></script>
 <script type="module" src="../js/orders.js"></script>
 </head>
-<body>
-<h2>PRICE List</h2>
+<body><h2>PRICE List</h2>
 <a href="price.pdf" download>
   <button>Download Price List</button>
-</a>
-
-<h3>Add Products</h3>
-
+</a><h3>Add Products</h3>
 <input type="text" id="productName" placeholder="Product Name">
 <input type="number" id="productQty" placeholder="Quantity">
+<button onclick="addToCart()">Add To Cart</button><h3>Cart Items</h3>
+<ul id="cartList"></ul><button onclick="openPaymentPopup()" class="green-btn">Pay</button>
 
-<button onclick="addToCart()">Add To Cart</button>
-
-<h3>Cart Items</h3>
-<ul id="cartList"></ul>
-
-<button onclick="openPaymentPopup()" class="green-btn">Pay</button>
-  <h3>Total Price: <span id="totalPrice">₹0</span></h3>
-
-<h2>Scan to Pay</h2>
-  <img src="upi-qr.png" width="250">
-<p>Scan this QR to pay via UPI</p>
-  <h2>📦 My Live Orders</h2>
-<div id="ordersBox"></div>
-  <!-- PAYMENT + ORDER POPUP -->
-<div id="orderPopup" class="popupBox">
-  <div class="popupContent">
+<h3>Total Price: <span id="totalPrice">₹0</span></h3><h2>Scan to Pay</h2>
+<img src="upi-qr.png" width="250">
+<p>Scan this QR to pay via UPI</p><h2>📦 My Live Orders</h2>
+<div id="ordersBox"></div><!-- PAYMENT POPUP --><div id="orderPopup" class="popup">
+  <div class="popup-box">
     <h2>💰 Payment Confirmation</h2>
+    <p>Total Price: ₹<span id="popupTotalPrice"></span></p><h3>Upload Payment Screenshot</h3>
+<input type="file" id="paymentProof" accept="image/*"><br><br>
+<img id="proofPreview" width="200"><br><br>
 
-    <p id="popupOrderData"></p>
+<button onclick="sendConfirmedOrder()">Send Order</button>
+<button onclick="closePopup()">Close</button>
 
-    <h3>Upload Payment Screenshot</h3>
-    <input type="file" id="paymentProof" accept="image/*"><br><br>
-    <img id="proofPreview" width="200"><br><br>
-
-    <button onclick="sendConfirmedOrder()">Send Order</button>
-    <button onclick="closePopup()">Close</button>
   </div>
-</div>
-  <script type="module" src="shopOrders.js"></script>
-<script src="dataManager.js"></script>
-  <style>
+</div><script type="module" src="shopOrders.js"></script><script src="dataManager.js"></script><style>
 .popup {
   display: none;
   position: fixed;
@@ -84,9 +65,9 @@
   border-radius: 6px;
   font-size: 16px;
 }
-  </style>
-  <script>
+</style><script>
 function openPaymentPopup() {
+  document.getElementById("popupTotalPrice").innerText = document.getElementById("totalPrice").innerText;
   document.getElementById("orderPopup").style.display = "block";
 }
 
@@ -98,20 +79,5 @@ function sendConfirmedOrder() {
   alert("✅ Order Sent Successfully!");
   closePopup();
 }
-  </script>
-  <div id="orderPopup" class="popupBox">
-  <div class="popupContent">
-
-    <h2>💰 Payment Confirmation</h2>
-    <p>Total Price: ₹<span id="popupTotalPrice"></span></p>
-
-    <h3>Upload Payment Screenshot</h3>
-    <input type="file" id="paymentProof"><br><br>
-
-    <button onclick="sendConfirmedOrder()">Send Order</button>
-    <button onclick="closePopup()">Close</button>
-
-  </div>
-  </div>
-</body>
-</html>
+</script></body>
+ </html> 
