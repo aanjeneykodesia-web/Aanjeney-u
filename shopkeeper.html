@@ -31,6 +31,21 @@
 <p>Scan this QR to pay via UPI</p>
   <h2>📦 My Live Orders</h2>
 <div id="ordersBox"></div>
+  <!-- PAYMENT + ORDER POPUP -->
+<div id="orderPopup" class="popupBox">
+  <div class="popupContent">
+    <h2>💰 Payment Confirmation</h2>
+
+    <p id="popupOrderData"></p>
+
+    <h3>Upload Payment Screenshot</h3>
+    <input type="file" id="paymentProof" accept="image/*"><br><br>
+    <img id="proofPreview" width="200"><br><br>
+
+    <button onclick="sendConfirmedOrder()">Send Order</button>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
   <script type="module" src="shopOrders.js"></script>
 <script src="dataManager.js"></script>
 </body>
