@@ -60,3 +60,27 @@ function saveToFirebase(product) {
 function getProducts() {
   return products;
 }
+// Open popup
+function openPaymentPopup() {
+  document.getElementById("orderPopup").style.display = "block";
+}
+
+// Close popup
+function closePopup() {
+  document.getElementById("orderPopup").style.display = "none";
+}
+
+// Preview screenshot
+document.getElementById("paymentProof").onchange = function(e) {
+  let reader = new FileReader();
+  reader.onload = function() {
+    document.getElementById("proofPreview").src = reader.result;
+  };
+  reader.readAsDataURL(e.target.files[0]);
+};
+
+// After payment confirmed
+function sendConfirmedOrder() {
+  alert("Order Sent Successfully!");
+  closePopup();
+}
