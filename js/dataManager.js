@@ -108,15 +108,3 @@ function sendConfirmedOrder() {
   alert("Order Sent Successfully!");
   closePopup();
 }
-function sendConfirmedOrder() {
-  const order = {
-    shop: document.getElementById("shopName")?.value || "Demo Shop",
-    totalPrice: document.getElementById("totalPrice").innerText,
-    status: "Pending",
-    time: new Date().toISOString()
-  };
-
-  db.ref("orders").push(order);
-  alert("Order Sent to Firebase (Demo)");
-  closePopup();
-}
